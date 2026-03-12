@@ -29,9 +29,17 @@ Database 저장
 ### Software
 - Python
 - Spring Boot
-- Git / GitHub
 
 ---
 
 ## 📂 Project Structure
 
+spring-plant-monitor
+│
+├── raspberry-pi
+│ └── sensor.py
+│
+├── backend
+│ └── spring-boot (추후 추가)
+│
+└── README.md
