@@ -33,7 +33,7 @@ Database 저장
 ---
 
 ## 📂 Project Structure
-
+```
 spring-plant-monitor
 │
 ├── raspberry-pi
@@ -43,3 +43,4 @@ spring-plant-monitor
 │ └── spring-boot (추후 추가)
 │
 └── README.md
+```
