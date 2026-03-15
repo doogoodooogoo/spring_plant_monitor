@@ -6,7 +6,7 @@ import requests
 
 dhtDevice = adafruit_dht.DHT11(board.D4)
 
-SERVER_URL= "http://localhost:8080/sensor"
+SERVER_URL= "http://192.168.45.188:8081/sensor"
 
 while True:
     try:
