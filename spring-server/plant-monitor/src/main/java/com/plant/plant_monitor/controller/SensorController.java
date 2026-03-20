@@ -1,16 +1,31 @@
 package com.plant.plant_monitor.controller;
 
 import org.springframework.web.bind.annotation.*;
-import java.util.Map;
+import java.util.List;
+import com.plant.plant_monitor.entity.SensorData;
+import com.plant.plant_monitor.repository.SensorRepository;
+import java.time.LocalDateTime;
 
 @RestController
 public class SensorController {
 
-    @PostMapping("/sensor")
-    public String receiveSensor(@RequestBody Map<String, Object> data) {
+    private final SensorRepository repository;
 
-        System.out.println("Received data: " + data);
-
-        return "ok";
+    public SensorController(SensorRepository repository) {
+        this.repository = repository;
     }
+
+    @PostMapping("/sensor")
+    public String save(@RequestBody SensorData data) {
+
+        data.setCreatedAt(LocalDateTime.now()); // 추가
+        repository.save(data);
+        return "saved";
+    }
+
+    @GetMapping("/sensor")
+    public List<SensorData> getAll() {
+        return repository.findAll();
+    }
+
 }
